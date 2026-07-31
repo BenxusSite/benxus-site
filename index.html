@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benxus Group — Il gruppo italiano dell'intelligenza commerciale</title>
+<meta name="description" content="Benxus Group è la holding milanese che costruisce e controlla società di intelligenza artificiale commerciale: BoomConnex e Byside.">
+<link rel="canonical" href="https://benxus.ai/">
+<meta name="theme-color" content="#F7F7F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0D11" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:title" content="Benxus Group">
+<meta property="og:description" content="Il gruppo italiano dell'intelligenza commerciale. BoomConnex · Byside.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benxus.ai/">
+<meta property="og:site_name" content="Benxus Group">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://benxus.ai/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Benxus Group — il gruppo italiano dell'intelligenza commerciale">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/og.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* colore */
+    --carta:#F7F7F4;
+    --inchiostro:#0E0E12;
+    --oltremare:#1B2AC8;
+    --oltremare-profondo:#111C86;
+    --ghiaccio:#EFF1F8;
+    --testo-sec:#3A3A44;
+    --testo-ter:#6A6A76;
+    --fondo-scuro:#0E0E12;
+    --su-scuro:#F7F7F4;
+    --su-scuro-blu:#8E99F0;
+    --bordo-scuro:rgba(247,247,244,.18);
+    /* struttura */
+    --angolo:26deg;        /* l'angolo del marchio: ticks, tagli, X */
+    --angolo-hero:26deg;   /* le diagonali dell'apertura, più ripide su mobile */
+    --linea:1.5px;
+    --maxw:1240px;
+    --pad:clamp(20px,4vw,56px);
+    --header-h:58px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --carta:#0D0D11;
+      --inchiostro:#F2F2EE;
+      --oltremare:#7E8CFF;
+      --oltremare-profondo:#AEB6FF;
+      --ghiaccio:#131320;
+      --testo-sec:#A6A6B2;
+      --testo-ter:#7C7C8A;
+      --fondo-scuro:#07070A;
+      --su-scuro:#F2F2EE;
+      --su-scuro-blu:#AEB6FF;
+      --bordo-scuro:rgba(242,242,238,.16);
+    }
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 24px)}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;transition-duration:.001s!important}
+  }
+  body{
+    background:var(--carta);
+    color:var(--inchiostro);
+    font-family:'Archivo',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--oltremare);color:var(--carta)}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--oltremare);outline-offset:4px;border-radius:2px}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .serif-i{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+
+  .salta{
+    position:absolute;left:var(--pad);top:-100px;z-index:99;
+    background:var(--oltremare);color:#fff;padding:10px 16px;
+    transition:top .2s ease;
+  }
+  .salta:focus{top:12px}
+
+  /* ---------- INTESTAZIONE ---------- */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:18px var(--pad);
+    background:color-mix(in srgb,var(--carta) 88%,transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:var(--linea) solid var(--inchiostro);
+  }
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand strong{font-weight:900;font-variation-settings:'wdth' 118;letter-spacing:.02em;font-size:17px}
+  .brand .x{color:var(--oltremare);display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+  .brand:hover .x{transform:rotate(var(--angolo))}
+  nav{display:flex;gap:clamp(14px,3vw,28px);align-items:center}
+  nav a{position:relative;padding:2px 0}
+  nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--oltremare);transition:width .28s ease}
+  nav a:hover::after{width:100%}
+  @media(max-width:560px){nav{font-size:10.5px;letter-spacing:.1em}}
+
+  /* ---------- APERTURA ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    text-align:center;
+    padding:110px var(--pad) 90px;
+    overflow:hidden;
+  }
+  .diag{
+    position:absolute;top:50%;left:50%;
+    width:220vmax;height:var(--linea);
+    background:var(--oltremare);
+    transform-origin:center;
+    z-index:1;
+    transform:translate(-50%,-50%) rotate(var(--r)) scaleX(0);
+    animation:draw 1.1s cubic-bezier(.7,0,.2,1) forwards;
+  }
+  .diag.a{--r:calc(-1 * var(--angolo-hero));animation-delay:.25s}
+  .diag.b{--r:var(--angolo-hero);animation-delay:.45s}
+  @keyframes draw{to{transform:translate(-50%,-50%) rotate(var(--r)) scaleX(1)}}
+
+  /* etichette delle società, in asse con le diagonali */
+  .rail{
+    position:absolute;top:50%;left:50%;z-index:2;
+    transform-origin:center;
+    opacity:0;animation:fadein .8s ease 1.25s forwards;
+  }
+  .rail.a{transform:translate(-50%,-50%) rotate(calc(-1 * var(--angolo-hero))) translateX(calc(-1*clamp(170px,27vw,430px))) translateY(-1.5em)}
+  .rail.b{transform:translate(-50%,-50%) rotate(var(--angolo-hero)) translateX(clamp(170px,27vw,430px)) translateY(-1.5em)}
+  .rail a{display:inline-flex;flex-direction:column;gap:2px;padding:7px 12px;background:var(--carta)}
+  .rail .name{font-weight:800;letter-spacing:.16em;font-size:clamp(11px,1.15vw,14px);font-family:'IBM Plex Mono',monospace;color:var(--oltremare)}
+  .rail small{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--inchiostro);opacity:.62}
+  .rail a:hover .name{color:var(--oltremare-profondo)}
+  @keyframes fadein{to{opacity:1}}
+
+  .hero .plate{
+    position:relative;z-index:3;
+    background:var(--carta);
+    padding:clamp(14px,3vw,34px) clamp(18px,4vw,56px);
+  }
+  .eyebrow{color:var(--oltremare);margin-bottom:18px;opacity:0;animation:fadein .7s ease .9s forwards}
+  h1{
+    font-weight:900;font-variation-settings:'wdth' 125;
+    font-size:clamp(54px,12.5vw,176px);
+    line-height:.92;letter-spacing:-.015em;
+    opacity:0;transform:translateY(14px);
+    animation:rise .8s cubic-bezier(.2,.7,.2,1) .55s forwards;
+  }
+  h1 .x{color:var(--oltremare)}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .tagline{
+    margin-top:22px;
+    font-size:clamp(18px,2.3vw,26px);
+    font-weight:500;
+    opacity:0;animation:fadein .8s ease 1.05s forwards;
+  }
+  .tagline .serif-i{color:var(--oltremare);font-size:1.12em}
+  .sub{
+    margin-top:14px;max-width:56ch;margin-inline:auto;
+    color:var(--testo-sec);font-size:15.5px;
+    opacity:0;animation:fadein .8s ease 1.2s forwards;
+  }
+  .corner{position:absolute;z-index:2;opacity:.66}
+  .corner.tl{top:96px;left:var(--pad)}
+  .corner.br{bottom:26px;right:var(--pad)}
+  .scrollcue{
+    position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+    display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--inchiostro);
+    opacity:0;animation:fadein 1s ease 1.7s forwards;
+  }
+  .scrollcue .bar{width:var(--linea);height:44px;background:var(--inchiostro);animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.45)}}
+
+  @media(max-width:760px){
+    :root{--angolo-hero:40deg}
+    .rail{top:auto;left:50%;transform:translateX(-50%)}
+    .rail.a{top:15%}
+    .rail.b{top:auto;bottom:15%}
+    .rail a{align-items:center;text-align:center;padding:8px 14px}
+    .corner.tl{display:none}
+    .corner.br{bottom:20px;font-size:10px}
+    .scrollcue{display:none}
+  }
+
+  /* ---------- SEZIONI ---------- */
+  section{padding:clamp(72px,10vw,130px) var(--pad)}
+  section.hero{padding:110px var(--pad) 90px}
+  .wrap{max-width:var(--maxw);margin:0 auto}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(34px,5vw,60px)}
+  .sec-head .tick{width:26px;height:var(--linea);background:var(--oltremare);transform:rotate(calc(-1 * var(--angolo)));flex:none}
+  .sec-head h2{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* manifesto */
+  #manifesto{border-top:var(--linea) solid var(--inchiostro)}
+  .manifesto p{
+    font-size:clamp(26px,4.4vw,52px);
+    line-height:1.18;font-weight:600;letter-spacing:-.012em;
+    max-width:22ch;
+  }
+  .manifesto p + p{margin-top:1.1em}
+  .manifesto .blu{color:var(--oltremare)}
+  .manifesto .serif-i{font-size:1.06em}
+
+  /* portafoglio */
+  #portafoglio{background:var(--ghiaccio);border-top:var(--linea) solid var(--inchiostro)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(16px,2.5vw,28px)}
+  .card{
+    position:relative;background:var(--carta);
+    border:var(--linea) solid var(--inchiostro);
+    padding:clamp(24px,3vw,40px);
+    min-height:300px;display:flex;flex-direction:column;
+    overflow:hidden;
+    transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+  }
+  .card::before{
+    content:"";position:absolute;top:-30%;height:160%;width:var(--linea);
+    background:var(--oltremare);opacity:.5;
+    transition:opacity .3s ease;
+  }
+  .card.slash::before{left:22%;transform:rotate(var(--angolo))}
+  .card.backslash::before{right:22%;transform:rotate(calc(-1 * var(--angolo)))}
+  .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(17,28,134,.35)}
+  .card:hover::before{opacity:1}
+  .card .k{color:var(--oltremare);margin-bottom:auto}
+  .card h3{font-weight:900;font-variation-settings:'wdth' 115;font-size:clamp(26px,3vw,38px);letter-spacing:-.01em;margin:26px 0 10px}
+  .card p{color:var(--testo-sec);font-size:15.5px;max-width:34ch}
+  .card .go{
+    margin-top:26px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;
+    color:var(--oltremare-profondo);
+    border-bottom:var(--linea) solid transparent;padding-bottom:3px;
+    transition:border-color .25s ease;
+  }
+  .card .go:hover{border-bottom-color:var(--oltremare)}
+  .card .go .arr{transition:transform .25s ease}
+  .card:hover .go .arr{transform:translateX(6px)}
+  .card.next{
+    background:transparent;
+    border-style:dashed;
+    align-items:center;justify-content:center;text-align:center;color:var(--testo-ter);
+  }
+  .card.next:hover{transform:none;box-shadow:none}
+  .card.next .plus{font-size:44px;font-weight:200;color:var(--oltremare);line-height:1;margin-bottom:12px}
+
+  /* principi */
+  #principi{border-top:var(--linea) solid var(--inchiostro)}
+  .principi{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4vw,56px)}
+  .pr .word{
+    font-weight:900;font-variation-settings:'wdth' 120;
+    font-size:clamp(24px,2.6vw,32px);letter-spacing:-.01em;
+    display:flex;align-items:center;gap:12px;margin-bottom:14px;
+  }
+  .pr .word::before{content:"";width:18px;height:var(--linea);background:var(--oltremare);transform:rotate(calc(-1 * var(--angolo)));flex:none}
+  .pr p{color:var(--testo-sec);font-size:15.5px;max-width:38ch}
+
+  /* contatti */
+  footer{
+    border-top:var(--linea) solid var(--inchiostro);
+    background:var(--fondo-scuro);color:var(--su-scuro);
+    padding:clamp(60px,8vw,100px) var(--pad) 34px;
+  }
+  .foot-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+  .xmark{position:relative;width:64px;height:64px;margin-bottom:26px}
+  .xmark::before,.xmark::after{
+    content:"";position:absolute;top:50%;left:50%;width:88px;height:var(--linea);
+    background:var(--oltremare);
+  }
+  .xmark::before{transform:translate(-50%,-50%) rotate(var(--angolo))}
+  .xmark::after{transform:translate(-50%,-50%) rotate(calc(-1 * var(--angolo)))}
+  footer h2{font-weight:900;font-variation-settings:'wdth' 120;font-size:clamp(30px,4.5vw,54px);letter-spacing:-.015em;line-height:1.05;max-width:14ch}
+  footer h2 .serif-i{color:var(--su-scuro-blu);font-size:1.05em}
+  .foot-right{display:flex;flex-direction:column;gap:22px}
+  .foot-right a.mail{
+    font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,1.8vw,19px);letter-spacing:.04em;
+    color:var(--su-scuro);border-bottom:var(--linea) solid var(--su-scuro-blu);
+    align-self:flex-start;padding-bottom:4px;transition:color .25s ease;
+  }
+  .foot-right a.mail:hover{color:var(--su-scuro-blu)}
+  .foot-right .mono{opacity:.62;line-height:2}
+  .foot-right .mono a{border-bottom:1px solid var(--bordo-scuro)}
+  .foot-right .mono a:hover{border-bottom-color:var(--su-scuro-blu)}
+  .legal{
+    max-width:var(--maxw);margin:70px auto 0;padding-top:22px;
+    border-top:1px solid var(--bordo-scuro);
+    display:flex;justify-content:space-between;gap:12px 28px;flex-wrap:wrap;
+    opacity:.55;line-height:1.9;
+  }
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body id="top">
+
+<a class="salta mono" href="#manifesto">Vai al contenuto</a>
+
+<header>
+  <a class="brand" href="#top" aria-label="Benxus Group — torna all'inizio">
+    <strong>BEN<span class="x">X</span>US</strong>
+    <span class="mono" style="color:var(--inchiostro);opacity:.6">Group</span>
+  </a>
+  <nav class="mono" aria-label="Navigazione principale">
+    <a href="#manifesto">Manifesto</a>
+    <a href="#portafoglio">Società</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- APERTURA -->
+  <section class="hero" aria-labelledby="titolo">
+    <div class="diag a" aria-hidden="true"></div>
+    <div class="diag b" aria-hidden="true"></div>
+
+    <div class="rail a">
+      <a href="#portafoglio">
+        <span class="name">BOOMCONNEX</span>
+        <small>creator&nbsp;→&nbsp;brand</small>
+      </a>
+    </div>
+    <div class="rail b">
+      <a href="#portafoglio">
+        <span class="name">BYSIDE</span>
+        <small>voce&nbsp;→&nbsp;clienti</small>
+      </a>
+    </div>
+
+    <p class="corner tl mono" aria-hidden="true">Holding — MMXXVI</p>
+    <p class="corner br mono" aria-hidden="true">Milano · 45.46° N — 9.19° E</p>
+
+    <div class="plate">
+      <p class="eyebrow mono">Benxus Group S.r.l.</p>
+      <h1 id="titolo">BEN<span class="x">X</span>US</h1>
+      <p class="tagline">Il gruppo italiano dell'<span class="serif-i">intelligenza</span> commerciale.</p>
+      <p class="sub">Costruiamo e controlliamo società di intelligenza artificiale che lavorano per le imprese: rispondono, connettono, vendono.</p>
+    </div>
+
+    <a class="scrollcue" href="#manifesto" aria-label="Scorri al manifesto">
+      <span class="mono">Scorri</span><span class="bar" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section id="manifesto" aria-labelledby="h-manifesto">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tick" aria-hidden="true"></span><h2 id="h-manifesto">Manifesto</h2></div>
+      <div class="manifesto">
+        <p class="reveal">Non vendiamo tecnologia. Costruiamo società che consegnano <span class="blu">risultati</span>.</p>
+        <p class="reveal">Telefonate risposte. Clienti acquisiti. Vendite <span class="serif-i blu">chiuse</span>.</p>
+        <p class="reveal">Due marchi operativi. Una direzione.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOGLIO -->
+  <section id="portafoglio" aria-labelledby="h-portafoglio">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tick" aria-hidden="true"></span><h2 id="h-portafoglio">Le società del gruppo</h2></div>
+      <div class="grid">
+
+        <article class="card slash reveal">
+          <p class="k mono">Creator → Brand</p>
+          <h3>BoomConnex</h3>
+          <p>Il marketplace che connette creator, brand e privati: campagne protette da pagamenti in escrow, risultati misurabili, zero intermediari opachi.</p>
+          <a class="go" href="https://boomconnex.com" target="_blank" rel="noopener">boomconnex.com <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card backslash reveal">
+          <p class="k mono">Voce → Clienti</p>
+          <h3>Byside</h3>
+          <p>La receptionist vocale AI che risponde a ogni chiamata, qualifica i contatti e fissa gli appuntamenti per le PMI italiane. Nessuna telefonata persa, nessun cliente perso.</p>
+          <a class="go" href="https://byside.ai" target="_blank" rel="noopener">byside.ai <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card next reveal">
+          <div>
+            <p class="plus" aria-hidden="true">+</p>
+            <p class="mono">La prossima società<br>è in costruzione</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPI -->
+  <section id="principi" aria-labelledby="h-principi">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="tick" aria-hidden="true"></span><h2 id="h-principi">Come lavoriamo</h2></div>
+      <div class="principi">
+        <div class="pr reveal">
+          <p class="word">Risultato</p>
+          <p>Ogni società del gruppo vende un esito misurabile — non una licenza software. Se non si conta, non si vende.</p>
+        </div>
+        <div class="pr reveal">
+          <p class="word">Conformità</p>
+          <p>AI Act europeo e GDPR come fondamenta di progetto, non come ostacolo da aggirare. L'intelligenza artificiale seria si costruisce così.</p>
+        </div>
+        <div class="pr reveal">
+          <p class="word">Scala</p>
+          <p>Nati per le imprese italiane, progettati per il mondo. Ogni marchio del gruppo è pensato per attraversare i confini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTATTI -->
+<footer id="contatti">
+  <div class="foot-grid">
+    <div>
+      <div class="xmark" aria-hidden="true"></div>
+      <h2>Parliamo di <span class="serif-i">imprese</span>, non di demo.</h2>
+    </div>
+    <div class="foot-right">
+      <a class="mail" href="mailto:hello@benxus.ai">hello@benxus.ai</a>
+      <p class="mono">
+        Benxus Group S.r.l.<br>
+        Milano — Italia<br>
+        <a href="https://boomconnex.com" target="_blank" rel="noopener">boomconnex.com</a> ·
+        <a href="https://byside.ai" target="_blank" rel="noopener">byside.ai</a>
+      </p>
+    </div>
+  </div>
+  <div class="legal mono">
+    <span>© 2026 Benxus Group S.r.l. — Tutti i diritti riservati</span>
+    <span>Questo sito non usa cookie né strumenti di tracciamento</span>
+    <span>P. IVA 00000000000</span>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Benxus Group S.r.l.",
+  "alternateName":"Benxus Group",
+  "url":"https://benxus.ai/",
+  "logo":"https://benxus.ai/og.png",
+  "image":"https://benxus.ai/og.png",
+  "email":"hello@benxus.ai",
+  "description":"Holding milanese che costruisce e controlla società di intelligenza artificiale commerciale: BoomConnex e Byside.",
+  "address":{"@type":"PostalAddress","addressLocality":"Milano","addressCountry":"IT"},
+  "subOrganization":[
+    {"@type":"Organization","name":"BoomConnex","url":"https://boomconnex.com","description":"Marketplace che connette creator, brand e privati con pagamenti in escrow."},
+    {"@type":"Organization","name":"Byside","url":"https://byside.ai","description":"Receptionist vocale AI per le PMI italiane: risponde, qualifica e fissa appuntamenti."}
+  ]
+}
+</script>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    var ridotto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (ridotto || !('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
