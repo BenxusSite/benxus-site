@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina non trovata — Benxus Group</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F7F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D0D11" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --carta:#F7F7F4;--inchiostro:#0E0E12;--oltremare:#1B2AC8;
+    --testo-sec:#3A3A44;--angolo:26deg;--linea:1.5px;--pad:clamp(20px,4vw,56px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--carta:#0D0D11;--inchiostro:#F2F2EE;--oltremare:#7E8CFF;--testo-sec:#A6A6B2}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--carta);color:var(--inchiostro);
+    font-family:'Archivo',system-ui,sans-serif;
+    min-height:100svh;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:var(--pad);position:relative;overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  a:focus-visible{outline:2.5px solid var(--oltremare);outline-offset:4px}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .diag{position:absolute;top:50%;left:50%;width:220vmax;height:var(--linea);background:var(--oltremare)}
+  .diag.a{transform:translate(-50%,-50%) rotate(calc(-1 * var(--angolo)))}
+  .diag.b{transform:translate(-50%,-50%) rotate(var(--angolo))}
+  .plate{position:relative;z-index:2;background:var(--carta);padding:clamp(20px,4vw,44px) clamp(22px,5vw,60px)}
+  h1{font-weight:900;font-variation-settings:'wdth' 125;font-size:clamp(64px,16vw,180px);line-height:.9;letter-spacing:-.02em}
+  h1 span{color:var(--oltremare)}
+  p.msg{margin-top:18px;font-size:clamp(17px,2.2vw,22px);font-weight:500}
+  p.sub{margin-top:10px;color:var(--testo-sec);font-size:15.5px}
+  .back{
+    margin-top:30px;display:inline-flex;align-items:center;gap:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--oltremare);border-bottom:var(--linea) solid var(--oltremare);padding-bottom:4px;
+  }
+  .back .arr{transition:transform .25s ease}
+  .back:hover .arr{transform:translateX(-6px)}
+</style>
+</head>
+<body>
+  <div class="diag a" aria-hidden="true"></div>
+  <div class="diag b" aria-hidden="true"></div>
+  <div class="plate">
+    <p class="mono" style="color:var(--oltremare);margin-bottom:14px">Errore 404</p>
+    <h1>4<span>0</span>4</h1>
+    <p class="msg">Questa pagina non esiste.</p>
+    <p class="sub">Il collegamento è sbagliato o la pagina è stata spostata.</p>
+    <a class="back" href="/"><span class="arr" aria-hidden="true">←</span> Torna alla home</a>
+  </div>
+</body>
+</html>
