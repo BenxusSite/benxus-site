@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Start-up innovativa — Benxus Group</title>
 <meta name="description" content="Informazioni obbligatorie della start-up innovativa Benxus Group S.r.l. ai sensi dell'art. 25 D.L. 179/2012.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://benxus.ai/startup-innovativa.html">
-<meta name="theme-color" content="#F7F7F4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0D0D11" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F7F4">
 <meta name="color-scheme" content="light dark">
-<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="apple-mobile-web-app-title" content="Benxus">
+<meta name="application-name" content="Benxus">
 <meta property="og:title" content="Start-up innovativa — Benxus Group">
 <meta property="og:description" content="Informazioni obbligatorie della start-up innovativa Benxus Group S.r.l. ai sensi dell'art. 25 D.L. 179/2012.">
 <meta property="og:type" content="website">
@@ -22,38 +23,41 @@
 <meta property="og:image" content="https://benxus.ai/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Benxus Group — il gruppo italiano dell'intelligenza commerciale">
+<meta property="og:image:alt" content="Benxus — il gruppo italiano dell'intelligenza commerciale">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
 <script src="assets/js/boot.js"></script>
 <script src="assets/js/site.js" defer></script>
 </head>
 <body id="top">
+<svg class="sprite" aria-hidden="true" focusable="false"><symbol id="mark" viewBox="251.89 251.89 1949.00 1948.99"><path class="m" d="M1226.39,257.89c-133.45,0-260.74,27.21-376.62,76.26l135.34,171.58c75.86-25.52,156.98-39.32,241.28-39.32,419.02,0,759.99,340.97,759.99,759.99,0,152.41-45.08,294.5-122.63,413.66l130.57,175.95c125.71-163.44,200.57-367.88,200.57-589.6,0-534-434.51-968.5-968.5-968.5Z"/><polygon class="m" points="1787.99 1737.95 1380.89 1189.45 1395.19 1167.71 1654.84 754.05 1695.15 689.91 1684.13 689.91 1604.5 689.91 1409.58 689.91 1285.77 886.61 1004.87 1332.93 854.14 1572.33 748.29 1740.53 857.61 1740.53 1040.02 1740.53 1231.55 1416.04 1586.33 1895.62 1619.89 1941 1879.44 1941 1938.72 1941 1913.99 1907.74 1787.99 1737.95"/><path class="m" d="M1226.39,1986.38c-137.52,0-266.6-36.74-378.01-100.78-228.08-131.36-381.98-377.61-381.98-659.21,0-155.99,47.26-301.16,128.19-422l-133.05-171.48c-127.59,164.03-203.65,370.07-203.65,593.47,0,534.1,434.51,968.5,968.5,968.5,133.55,0,260.84-27.21,376.72-76.26l-128.58-173.86c-77.75,27.01-161.25,41.6-248.13,41.6Z"/><polygon class="m" points="670.84 708.28 994.64 1125.41 1015.19 1151.92 1160.95 920.86 1140.1 894.35 871.71 554.37 837.95 511.58 573.64 511.58 518.23 511.58 541.76 541.96 670.84 708.28"/></symbol></svg>
 <div class="progress" aria-hidden="true"></div>
 <a class="salta mono" href="#contenuto">Vai al contenuto</a>
 <header class="site-header">
-  <a class="brand" href="index.html#top" aria-label="Benxus Group — torna all'inizio">
-    <strong>BEN<span class="x">X</span>US</strong>
-    <span class="mono grp">Group</span>
-  </a>
-  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu"><span></span><span></span></button>
+  <a class="logo-link" href="index.html#top" aria-label="Benxus Group — torna all'inizio"><svg class="wordmark" viewBox="321.83 1028.12 1809.12 396.54" role="img" aria-label="Benxus Group"><title>Benxus Group</title><path class="wm-l" d="M536.22,1209.8c26.92-12.83,40.39-32.61,40.39-59.36s-11.89-47.48-35.66-59.77c-18.9-9.55-44.11-14.05-75.62-13.51h-143.5v292.69h147.37c79.91,0,119.87-30.29,119.87-90.88,0-16.64-4.73-31.24-14.18-43.8-9.45-12.28-22.34-20.74-38.67-25.38ZM465.76,1308.87h-64.02v-172.75h61.87c21.76,0,32.65,9.41,32.65,28.25,0,9.56-3.73,16.92-11.17,22.1-6.01,3.82-13.18,5.73-21.48,5.73h-38.11v49.53h40.26c28.64,0,42.96,11.46,42.96,34.39s-14.33,32.75-42.96,32.75Z"/><polygon class="wm-l" points="712.32 1248.69 852.45 1248.69 852.45 1189.74 712.32 1189.74 712.32 1138.58 866.63 1138.58 866.63 1077.58 632.4 1077.58 632.4 1369.86 870.93 1369.86 870.93 1304.36 712.32 1304.36 712.32 1248.69"/><polygon class="wm-l" points="1105.46 1077.58 1105.89 1241.54 999.34 1077.58 916.85 1077.58 916.85 1370.68 992.03 1370.68 992.03 1188.11 1105.89 1369.45 1180.65 1369.45 1180.65 1077.58 1105.46 1077.58"/><path class="wm-l" d="M1744.07,1253.6c0,19.38-4.01,33.57-12.03,42.57-8.59,9.56-22.49,14.33-41.68,14.33s-33.08-4.77-41.68-14.33c-8.02-9.01-12.03-23.19-12.03-42.57v-176.02h-79.91v171.52c0,42.85,10.74,74.64,32.22,95.38,21.76,21.02,55.57,31.52,101.4,31.52s79.77-10.5,101.83-31.52c21.19-20.74,31.79-52.53,31.79-95.38v-171.52h-79.91v176.02Z"/><path class="wm-l" d="M2042.01,1193.84c-6.02-1.64-16.9-4.23-32.65-7.78-12.89-3-22.34-5.46-28.36-7.37-18.62-5.73-27.93-13.51-27.93-23.33,0-16.64,12.89-24.97,38.67-24.97,13.75,0,25.2,2.6,34.37,7.78,10.59,6.28,15.61,15.42,15.04,27.43h79.91c0-30.56-12.89-54.44-38.67-71.64-22.63-15.01-50.7-22.51-84.21-22.51s-61.01,6.83-84.21,20.47c-27.22,16.11-40.82,38.89-40.82,68.36,0,24.29,9.59,43.67,28.79,58.13,13.17,9.82,33.51,18.56,61.01,26.2,40.29,10.75,60.56,16.1,60.8,16.05,18.18,6.54,27.28,15.39,27.28,26.53,0,10.1-5.16,17.74-15.47,22.92-8.88,4.64-20.05,6.96-33.51,6.96-37.24,0-56.57-15.15-58-45.44h-79.91c0,35.2,13.46,61.95,40.39,80.23,23.48,16.11,54.42,24.15,92.8,24.15s69.03-7.09,91.94-21.29c27.78-16.64,41.68-42.16,41.68-76.55,0-40.39-29.64-68.5-88.94-84.33Z"/><polygon class="wm-x" points="1363.32 1141.67 1273.71 1028.12 1185.01 1028.12 1322.87 1205.76 1363.32 1141.67"/><polygon class="wm-x" points="1424.31 1216.18 1428.28 1210.13 1511.5 1077.59 1508.45 1077.59 1432.28 1077.59 1248.83 1369.05 1329.75 1369.05 1382.9 1279.03 1490.63 1424.66 1579.07 1424.66 1424.31 1216.18"/></svg></a>
   <nav id="nav" class="nav mono" aria-label="Navigazione principale">
     <a href="index.html#manifesto">Manifesto</a>
-    <a href="index.html#societa">Società</a>
+    <a href="index.html#piattaforme">Piattaforme</a>
     <a href="index.html#ecosistema">Ecosistema</a>
     <a href="index.html#azienda">Azienda</a>
     <a class="btn sm" href="index.html#contatti">Contatti <span class="arr" aria-hidden="true">→</span></a>
   </nav>
+  <div class="tools">
+    <button class="theme-btn" type="button" aria-label="Cambia tema" title="Cambia tema"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu"><span></span><span></span></button>
+  </div>
 </header>
 
 <main id="contenuto" class="doc">
   <div class="wrap">
     <p class="kicker mono">Art. 25, commi 11 e 12, D.L. 179/2012</p>
     <h1>Start-up innovativa</h1>
-    <p class="upd mono">Ultimo aggiornamento: 12 ottobre 2026</p>
+    <p class="upd mono">Ultimo aggiornamento: 2 novembre 2026</p>
     <p class="intro">BENXUS GROUP S.R.L. è iscritta dal 17/09/2026 nella sezione speciale del Registro delle Imprese di Milano Monza Brianza Lodi dedicata alle start-up innovative. Come previsto dalla legge, in questa pagina sono pubblicate le informazioni richieste, coerenti con quanto depositato al Registro delle Imprese.</p>
 <nav class="toc" aria-label="Indice"><p class="mono">Indice</p><ol><li><a href="#s-a">Costituzione</a></li><li><a href="#s-b">Sede</a></li><li><a href="#s-c">Oggetto sociale</a></li><li><a href="#s-d">Attività e ricerca e sviluppo</a></li><li><a href="#s-e">Soci</a></li><li><a href="#s-f">Società partecipate</a></li><li><a href="#s-g">Titoli di studio ed esperienze</a></li><li><a href="#s-h">Relazioni con incubatori, investitori, università</a></li><li><a href="#s-i">Ultimo bilancio</a></li><li><a href="#s-l">Diritti di privativa</a></li></ol></nav><h2 id="s-a"><span class="n">01</span>Data e luogo di costituzione, notaio</h2><dl class="kv"><div><dt>Data atto costitutivo</dt><dd>02/09/2026</dd></div><div><dt>Luogo</dt><dd>Milano</dd></div><div><dt>Notaio</dt><dd>Notaio Mila Ricci — Studio notarile Mila Ricci, Via della Moscova 40, Milano</dd></div><div><dt>Iscrizione al Registro Imprese</dt><dd>17/09/2026</dd></div></dl><h2 id="s-b"><span class="n">02</span>Sede principale ed eventuali sedi periferiche</h2><dl class="kv"><div><dt>Sede legale e principale</dt><dd>Via Karol Wojtyla 3/19, 20046 Cisliano (MI)</dd></div><div><dt>Sedi periferiche e unità locali</dt><dd>Nessuna</dd></div></dl><h2 id="s-c"><span class="n">03</span>Oggetto sociale</h2><p>Sviluppo, produzione e commercializzazione di prodotti o servizi innovativi ad alto valore tecnologico e, più specificamente, di un ecosistema integrato di software, applicazioni e piattaforme digitali, anche erogati in modalità SaaS, basato su tecnologie proprietarie di intelligenza artificiale e destinato all'automazione dei processi di comunicazione, marketing, vendita e gestione delle relazioni commerciali delle imprese (art. 3.1 dello statuto).</p><h2 id="s-d"><span class="n">04</span>Descrizione dell'attività, comprese le attività e le spese in ricerca e sviluppo</h2><p>Software e piattaforme digitali basati sull'intelligenza artificiale per l'automazione di comunicazione, marketing e vendita delle imprese: assistenti vocali per chiamate e appuntamenti e piattaforme di collegamento tra aziende e creator digitali.</p><dl class="kv"><div><dt>Spese in R&S previste (primo esercizio)</dt><dd>€ 125.000</dd></div></dl><h2 id="s-e"><span class="n">05</span>Elenco dei soci</h2><dl class="kv"><div><dt>Socio unico</dt><dd>Corrado Mazzotta — 100%</dd></div><div><dt>Fiduciarie o holding interposte</dt><dd>Nessuna</dd></div></dl><p>Elenco soci dichiarato veritiero dal legale rappresentante ai sensi del D.P.R. 445/2000.</p><h2 id="s-f"><span class="n">06</span>Elenco delle società partecipate</h2><p>Nessuna.</p><h2 id="s-g"><span class="n">07</span>Titoli di studio ed esperienze professionali dei soci e del personale</h2><p><strong>Corrado Mazzotta</strong> — diploma di licenza media; imprenditore, fondatore del progetto BoomConnex.</p><h2 id="s-h"><span class="n">08</span>Relazioni con incubatori certificati, investitori, università e centri di ricerca</h2><p>Nessuna alla data di aggiornamento.</p><h2 id="s-i"><span class="n">09</span>Ultimo bilancio depositato</h2><p>Non ancora disponibile: il primo esercizio si chiude il 31/12/2026.</p><h2 id="s-l"><span class="n">10</span>Elenco dei diritti di privativa su proprietà industriale e intellettuale</h2><p>Nessuno alla data di aggiornamento.</p><div class="callout"><p>Le informazioni di questa pagina corrispondono a quelle depositate presso il Registro delle Imprese e sono aggiornate in occasione delle comunicazioni periodiche. I dati ufficiali sono consultabili su <a class="inl" href="https://startup.registroimprese.it" target="_blank" rel="noopener noreferrer">startup.registroimprese.it</a>.</p></div>
     <p class="back-top"><a class="btn ghost" href="index.html"><span class="arr" aria-hidden="true">←</span> Torna alla home</a></p>
@@ -62,8 +66,8 @@
 <footer class="site-footer" id="contatti">
   <div class="foot-grid">
     <div>
-      <div class="xmark" aria-hidden="true"></div>
-      <h2>Parliamo di <span class="serif-i">imprese</span>, non di demo.</h2>
+      <svg class="foot-logo" viewBox="321.83 1028.12 1809.12 396.54" role="img" aria-label="Benxus"><title>Benxus</title><path class="wm-l" d="M536.22,1209.8c26.92-12.83,40.39-32.61,40.39-59.36s-11.89-47.48-35.66-59.77c-18.9-9.55-44.11-14.05-75.62-13.51h-143.5v292.69h147.37c79.91,0,119.87-30.29,119.87-90.88,0-16.64-4.73-31.24-14.18-43.8-9.45-12.28-22.34-20.74-38.67-25.38ZM465.76,1308.87h-64.02v-172.75h61.87c21.76,0,32.65,9.41,32.65,28.25,0,9.56-3.73,16.92-11.17,22.1-6.01,3.82-13.18,5.73-21.48,5.73h-38.11v49.53h40.26c28.64,0,42.96,11.46,42.96,34.39s-14.33,32.75-42.96,32.75Z"/><polygon class="wm-l" points="712.32 1248.69 852.45 1248.69 852.45 1189.74 712.32 1189.74 712.32 1138.58 866.63 1138.58 866.63 1077.58 632.4 1077.58 632.4 1369.86 870.93 1369.86 870.93 1304.36 712.32 1304.36 712.32 1248.69"/><polygon class="wm-l" points="1105.46 1077.58 1105.89 1241.54 999.34 1077.58 916.85 1077.58 916.85 1370.68 992.03 1370.68 992.03 1188.11 1105.89 1369.45 1180.65 1369.45 1180.65 1077.58 1105.46 1077.58"/><path class="wm-l" d="M1744.07,1253.6c0,19.38-4.01,33.57-12.03,42.57-8.59,9.56-22.49,14.33-41.68,14.33s-33.08-4.77-41.68-14.33c-8.02-9.01-12.03-23.19-12.03-42.57v-176.02h-79.91v171.52c0,42.85,10.74,74.64,32.22,95.38,21.76,21.02,55.57,31.52,101.4,31.52s79.77-10.5,101.83-31.52c21.19-20.74,31.79-52.53,31.79-95.38v-171.52h-79.91v176.02Z"/><path class="wm-l" d="M2042.01,1193.84c-6.02-1.64-16.9-4.23-32.65-7.78-12.89-3-22.34-5.46-28.36-7.37-18.62-5.73-27.93-13.51-27.93-23.33,0-16.64,12.89-24.97,38.67-24.97,13.75,0,25.2,2.6,34.37,7.78,10.59,6.28,15.61,15.42,15.04,27.43h79.91c0-30.56-12.89-54.44-38.67-71.64-22.63-15.01-50.7-22.51-84.21-22.51s-61.01,6.83-84.21,20.47c-27.22,16.11-40.82,38.89-40.82,68.36,0,24.29,9.59,43.67,28.79,58.13,13.17,9.82,33.51,18.56,61.01,26.2,40.29,10.75,60.56,16.1,60.8,16.05,18.18,6.54,27.28,15.39,27.28,26.53,0,10.1-5.16,17.74-15.47,22.92-8.88,4.64-20.05,6.96-33.51,6.96-37.24,0-56.57-15.15-58-45.44h-79.91c0,35.2,13.46,61.95,40.39,80.23,23.48,16.11,54.42,24.15,92.8,24.15s69.03-7.09,91.94-21.29c27.78-16.64,41.68-42.16,41.68-76.55,0-40.39-29.64-68.5-88.94-84.33Z"/><polygon class="wm-x" points="1363.32 1141.67 1273.71 1028.12 1185.01 1028.12 1322.87 1205.76 1363.32 1141.67"/><polygon class="wm-x" points="1424.31 1216.18 1428.28 1210.13 1511.5 1077.59 1508.45 1077.59 1432.28 1077.59 1248.83 1369.05 1329.75 1369.05 1382.9 1279.03 1490.63 1424.66 1579.07 1424.66 1424.31 1216.18"/></svg>
+      <h2>Parliamo di <em>imprese</em>, non di demo.</h2>
     </div>
     <div class="contact">
       <a href="mailto:info@benxus.ai"><span class="l mono">Email</span><span class="v">info@benxus.ai</span><span class="arr" aria-hidden="true">↗</span></a>
@@ -87,7 +91,7 @@
     Capitale sociale € 1.000,00 interamente versato ·
     PEC benxusgroup@pec.it ·
     Start-up innovativa iscritta nella sezione speciale del Registro delle Imprese ·
-    © <span data-year>2026</span> — Tutti i diritti riservati · Questo sito non usa cookie né strumenti di tracciamento.
+    © <span data-year>2026</span> — Tutti i diritti riservati · Nessun cookie, nessun tracciamento.
   </p>
   
 </footer>
