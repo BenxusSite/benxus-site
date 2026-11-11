@@ -1,4 +1,4 @@
-# Benxus Group — sito istituzionale (v3, 11 novembre 2026)
+# Benxus Group — sito istituzionale (v3.1, 11 novembre 2026)
 
 Sito statico: nessuna build, nessuna dipendenza esterna, nessun cookie. Si pubblica così com'è su GitHub Pages.
 

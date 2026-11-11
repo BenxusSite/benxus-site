@@ -209,7 +209,7 @@ body.menu-open .site-header{transform:none}
 @keyframes breathe{0%,100%{transform:scale(.92);opacity:.75}50%{transform:scale(1.06);opacity:1}}
 .emblem{position:absolute;inset:14%;width:72%;height:72%;overflow:visible}
 .emblem .m{fill:var(--brand)}
-.emblem{transform:translate(calc(var(--px) * 10px),calc(var(--py) * 10px));transition:transform .3s var(--ease)}
+.emblem{transform:translate3d(calc(var(--px) * 10px),calc(var(--py) * 10px),0);will-change:transform}
 .emblem .whole{transform-box:view-box;transform-origin:50% 50%;opacity:0;animation:emblemIn 1.3s var(--ease) .15s forwards}
 @keyframes emblemIn{from{opacity:0;transform:scale(.82) rotate(-25deg)}to{opacity:1;transform:none}}
 
@@ -654,3 +654,31 @@ body.menu-open .to-top{opacity:0;pointer-events:none}
 .card .h3{font-size:clamp(30px,2.9vw,42px);margin:34px 0 12px;padding-top:0}
 .card .domain{margin-top:auto;padding-top:22px}
 .card .chips{margin-bottom:4px}
+
+/* =====================================================================
+   v3.1 — seconda tornata di test (11 novembre 2026)
+   ===================================================================== */
+/* selettore lingua: entrambe le sigle, quella attiva evidenziata */
+.lang-sw{display:inline-flex;align-items:center;height:44px;padding:3px;border:1px solid var(--line);border-radius:999px;font-weight:500;letter-spacing:.1em}
+.lang-sw > *{min-width:38px;height:36px;display:grid;place-items:center;border-radius:999px;padding:0 8px}
+.lang-sw .on{background:var(--ink);color:var(--bg)}
+.lang-sw a{color:var(--muted)}
+@media (hover:hover){.lang-sw a:hover{color:var(--ink);background:rgba(var(--brand-rgb),.14)}}
+.lang-sw a:active{background:rgba(var(--brand-rgb),.2)}
+@media(max-width:374px){.lang-sw > *{min-width:32px;padding:0 6px}}
+
+/* percorso: piattaforme già online */
+.timeline li.live{border:1.5px solid var(--brand);background:rgba(var(--brand-rgb),.07)}
+.timeline li.live .d{display:inline-flex;align-items:center;gap:8px}
+.timeline li.live .d::before{content:"";width:8px;height:8px;border-radius:50%;background:#2FB872;box-shadow:0 0 0 3px rgba(47,184,114,.2)}
+
+/* titoli grandi: mai parole spezzate */
+.big,.hero h1,.manifesto p,.site-footer h2{hyphens:manual;-webkit-hyphens:manual;overflow-wrap:normal;word-break:normal}
+.big{text-wrap:balance}
+.registry .big{font-size:clamp(30px,3.6vw,54px)}
+
+/* alternative al link email nella sezione Lavora con noi */
+.mail-alt{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mail-alt .mono{color:var(--muted-2);margin-right:4px}
+.mail-alt .btn{min-height:44px}
+.hero .sub strong{color:var(--ink);font-weight:700}

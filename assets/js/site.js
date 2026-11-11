@@ -22,6 +22,7 @@
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
   var onMQ = function (mq, fn) { if (mq.addEventListener) mq.addEventListener('change', fn); else if (mq.addListener) mq.addListener(fn); };
   var themeListeners = [];
+  var ribbonUpdate = function () {};
 
   $$('[data-year]').forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
 
@@ -140,6 +141,7 @@
     if (toTop) toTop.classList.toggle('show', y > window.innerHeight * 0.9);
     if (y < 40 && lastHash && navLinks.length && userMoved) setHash('');
     lightUpdate();
+    ribbonUpdate(y);
     lastY = y;
     ticking = false;
   }
@@ -147,16 +149,26 @@
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
 
-  /* ---------- emblema: leggera profondità che segue il puntatore (il logo resta intero) ---------- */
+  /* ---------- emblema: segue il puntatore in modo morbido (il logo resta intero) ---------- */
   var heroArt = $('.hero-art');
   if (heroArt && finePointer && !reduced) {
     var hero = $('.hero');
+    var eT = { x: 0, y: 0 }, eC = { x: 0, y: 0 }, eRun = false;
+    var eFrame = function () {
+      eC.x += (eT.x - eC.x) * 0.07;
+      eC.y += (eT.y - eC.y) * 0.07;
+      heroArt.style.setProperty('--px', eC.x.toFixed(4));
+      heroArt.style.setProperty('--py', eC.y.toFixed(4));
+      if (Math.abs(eT.x - eC.x) > 0.001 || Math.abs(eT.y - eC.y) > 0.001) requestAnimationFrame(eFrame); else eRun = false;
+    };
+    var eKick = function () { if (!eRun) { eRun = true; requestAnimationFrame(eFrame); } };
     hero.addEventListener('pointermove', function (e) {
       var r = heroArt.getBoundingClientRect();
-      heroArt.style.setProperty('--px', clamp((e.clientX - (r.left + r.width / 2)) / (r.width / 2), -1.5, 1.5).toFixed(3));
-      heroArt.style.setProperty('--py', clamp((e.clientY - (r.top + r.height / 2)) / (r.height / 2), -1.5, 1.5).toFixed(3));
+      eT.x = clamp((e.clientX - (r.left + r.width / 2)) / (r.width / 2), -1.2, 1.2);
+      eT.y = clamp((e.clientY - (r.top + r.height / 2)) / (r.height / 2), -1.2, 1.2);
+      eKick();
     });
-    hero.addEventListener('pointerleave', function () { heroArt.style.setProperty('--px', '0'); heroArt.style.setProperty('--py', '0'); });
+    hero.addEventListener('pointerleave', function () { eT.x = 0; eT.y = 0; eKick(); });
   }
 
   /* ---------- menu mobile ---------- */
@@ -269,23 +281,21 @@
     window.addEventListener('load', buildLines);
   }
 
-  /* ---------- nastro scorrevole: velocità tranquilla ---------- */
+  /* ---------- nastro: si muove solo con lo scorrimento della pagina, insieme al testo ---------- */
   var track = $('.ribbon .track');
   if (track && !reduced) {
-    var x = 0, boost = 0, ribbonOn = true;
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { ribbonOn = en[0].isIntersecting; }).observe(track);
-    var loop = function () {
-      if (ribbonOn) {
-        var half = track.scrollWidth / 2;
-        boost += (Math.min(Math.abs(velocity) * 0.08, 1.2) - boost) * 0.05;
-        velocity *= 0.85;
-        x -= 0.45 + boost;
-        if (half > 0 && -x >= half) x += half;
-        track.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
-      }
-      requestAnimationFrame(loop);
+    var rTarget = 0, rCur = 0, rRunning = false;
+    var rFrame = function () {
+      rCur += (rTarget - rCur) * 0.12;
+      var half = track.scrollWidth / 2 || 1;
+      var x = -(((rCur % half) + half) % half);
+      track.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
+      if (Math.abs(rTarget - rCur) > 0.2) requestAnimationFrame(rFrame); else rRunning = false;
     };
-    requestAnimationFrame(loop);
+    ribbonUpdate = function (y) {
+      rTarget = y * 0.35;
+      if (!rRunning) { rRunning = true; requestAnimationFrame(rFrame); }
+    };
   }
 
   /* ---------- schede: inclinazione e riflesso ---------- */
