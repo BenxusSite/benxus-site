@@ -1,4 +1,4 @@
-# Benxus Group — sito istituzionale (v2, novembre 2026)
+# Benxus Group — sito istituzionale (v3, 11 novembre 2026)
 
 Sito statico: nessuna build, nessuna dipendenza esterna, nessun cookie. Si pubblica così com'è su GitHub Pages.
 
@@ -6,7 +6,8 @@ Sito statico: nessuna build, nessuna dipendenza esterna, nessun cookie. Si pubbl
 
 | Percorso | A cosa serve |
 |---|---|
-| `index.html` | Home page |
+| `index.html` | Home page (italiano) |
+| `en/` | Versione inglese: home, privacy e cookie policy |
 | `startup-innovativa.html` | Informazioni obbligatorie art. 25 D.L. 179/2012 |
 | `note-legali.html` · `privacy.html` · `cookie.html` | Pagine legali |
 | `404.html` | Pagina di errore (GitHub Pages la usa in automatico) |
@@ -49,6 +50,13 @@ Dopo 1–2 minuti il sito è online. Ricarica con `Cmd/Ctrl + Shift + R`.
 - Il pulsante luna/sole in alto a destra cambia tema, e il tema resta uguale cambiando pagina
 - `https://benxus.ai/.well-known/security.txt` si apre (se dà 404, la cartella nascosta non è stata caricata)
 - Incolla il link in WhatsApp: deve comparire la nuova anteprima nera con il logo. WhatsApp e LinkedIn tengono in memoria la vecchia anteprima per qualche giorno; su LinkedIn puoi forzarla con il Post Inspector.
+
+## Se il sito non risponde (segnalazione BNX-001)
+
+- **Pagina con l'unicorno «We're having a really bad day»**: è GitHub che non funziona, non il sito. Controlla https://www.githubstatus.com: il sito torna da solo quando GitHub risolve.
+- **«Server non trovato» / «Impossibile trovare il server»**: il nome benxus.ai non viene tradotto in indirizzo (DNS). Cause tipiche: record DNS modificati di recente, record in conflitto sul registrar (parcheggio, inoltro), rete del singolo utente. Verifica su https://dnschecker.org cercando `benxus.ai` (tipo A): devono comparire solo i quattro indirizzi 185.199.108–111.153 in tutto il mondo.
+- **Mai cancellare il file `CNAME`** dal repository: senza, GitHub stacca il dominio e il sito sparisce finché non lo si rimette.
+- **Monitoraggio gratuito**: crea un account su UptimeRobot (o Better Stack), aggiungi un monitor HTTPS su `https://benxus.ai` ogni 5 minuti e la tua email per gli avvisi. Così sai dei fermi prima dei clienti, con orari esatti da confrontare con lo stato di GitHub.
 
 ## Sicurezza: impostazioni da controllare una volta
 

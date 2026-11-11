@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://benxus.ai/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://benxus.ai/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://benxus.ai/startup-innovativa.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://benxus.ai/note-legali.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <priority>0.5</priority>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://benxus.ai/privacy.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/privacy.html"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://benxus.ai/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/privacy.html"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
   <url>
     <loc>https://benxus.ai/cookie.html</loc>
-    <lastmod>2026-11-02</lastmod>
-    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/cookie.html"/>
+    <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://benxus.ai/en/cookie.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://benxus.ai/cookie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://benxus.ai/en/cookie.html"/>
+    <lastmod>2026-11-11</lastmod>
   </url>
 </urlset>
